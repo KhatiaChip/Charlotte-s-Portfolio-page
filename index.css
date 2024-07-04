@@ -1,0 +1,310 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 90%;
+  padding: 0 16px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 64px 0;
+}
+
+.navbar .left {
+  font-size: 32px;
+  font-weight: bold;
+  color: #9e58b0;
+}
+
+.navbar .right {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar .right a {
+  text-decoration: none;
+  color: #9e58b0;
+  font-size: 18px;
+}
+
+.icon {
+  color: #9e58b0;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.navbar .right a .icon:hover {
+  text-decoration: underline;
+  color: #9e58b0;
+}
+
+.navbar .hamburger {
+  height: 50px;
+  width: 50px;
+}
+
+.navbar .hamburger {
+  display: none;
+}
+
+.navbar .hamburger:hover {
+  cursor: pointer;
+}
+
+.navbar .bar1,
+.bar2,
+.bar3 {
+  background-color: #43174e;
+  height: 4px;
+  width: 36px;
+  margin: 3px;
+  border-radius: 10px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-areas:
+    "flamingo flamingo livingroom"
+    "flamingo flamingo pinky"
+    "lagon rome pinky"
+    "pinkworld palm palm"
+    "pinkworld palm palm"
+    "abstract abstract sky"
+    "abstract abstract sky";
+  gap: 16px;
+  width: 100%;
+}
+
+#flamingo {
+  grid-area: flamingo;
+}
+
+#livingroom {
+  grid-area: livingroom;
+}
+
+#pinky {
+  grid-area: pinky;
+}
+
+#lagon {
+  grid-area: lagon;
+}
+#rome {
+  grid-area: rome;
+}
+
+#pinkworld {
+  grid-area: pinkworld;
+}
+#palm {
+  grid-area: palm;
+}
+#abstract {
+  grid-area: abstract;
+}
+#sky {
+  grid-area: sky;
+}
+
+.project {
+  /* width: 600px; */
+  position: relative;
+}
+
+.project img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.project .overlay {
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  margin: 0;
+  color: #43174e;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.project .overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  color: #43174e;
+  padding: 64px;
+}
+
+@media only screen and (min-width: 1100px) {
+  .mobileNav {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .container {
+    max-width: 100%;
+  }
+  .project-grid {
+    max-width: 100%;
+    grid-template-areas:
+      "flamingo flamingo "
+      "livingroom pinky"
+      "lagon rome"
+      "palm palm"
+      "pinkworld abstract"
+      "sky sky";
+  }
+  .mobileNav {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .project-grid {
+    margin-top: 100px;
+  }
+  .navbar {
+    padding: 16px 24px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: white;
+    width: 100%;
+  }
+  .navbar .right {
+    display: none;
+  }
+
+  .navbar .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobileNav {
+    width: 80px;
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    right: -160px;
+    padding: 16px;
+    transition: transform 0.3s;
+  }
+  .mobileNav .icon {
+    margin: 16px 0;
+  }
+  .openmobileNav {
+    transform: translateX(-160px);
+  }
+
+  .mobileNav a {
+    text-decoration: none;
+    color: #9e58b0;
+    font-size: 18px;
+    margin: 16px 0;
+  }
+
+  .mobileNav a:hover {
+    text-decoration: underline;
+  }
+
+  .project-grid {
+    max-width: 100%;
+    grid-template-areas:
+      "flamingo flamingo "
+      "livingroom livingroom"
+      " pinky pinky"
+      "lagon rome"
+      "palm palm"
+      "pinkworld pinkworld"
+      "abstract abstract"
+      "sky sky";
+  }
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+  .navbar .right a {
+    font-size: 14px;
+  }
+  .navbar .left {
+    font-size: 24px;
+  }
+  .project .overlay {
+    font-size: 24px;
+  }
+}
+
+@keyframes flipBar1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg) translate(4px, 10px);
+  }
+}
+
+.animateBar1 {
+  animation: flipBar1 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.animateBar2 {
+  animation: fadeBar2 0.5s;
+  animation-fill-mode: forwards;
+}
+.animateBar3 {
+  animation: flipBar3 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeBar2 {
+  from {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes flipBar3 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg) translate(4px, -10px);
+  }
+}
